@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi persona favorita: Lili 💛</title>
+    
+    <!-- LOGO PARA LA PESTAÑA DEL BUSCADOR (FAVICON) -->
+    <link rel="icon" type="image/png" href="https://fonts.gstatic.com/s/e/notoemoji/latest/1f33b/512.png">
+
+    <style>
+        /* Variables de color enfocadas en flores amarillas */
+        :root {
+            --amarillo-principal: #FFDE4D;
+            --amarillo-suave: #FFF9D0;
+            --dorado: #F4CE14;
+            --oscuro: #45474B;
+            --blanco: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            /* FONDO EDITABLE: Cambia 'mi-fondo.jpg' por el nombre de tu imagen editada */
+            background: url('mi-fondo.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-color: var(--amarillo-suave); /* Color de respaldo por si acaso */
+            color: var(--oscuro);
+            line-height: 1.6;
+        }
+
+        /* Hero / Bienvenida */
+        header {
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1604147706283-d7119b5b822c?q=80&w=1200') no-repeat center center/cover;
+            height: 65vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 20px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+
+        header p {
+            font-size: 1.5rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+        }
+
+        /* GIRASOL MÁS GRANDE */
+        .Girasol-icono {
+            font-size: 7rem; /* Aumentado sustancialmente para destacar */
+            filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.3));
+            animation: spin 15s linear infinite;
+            margin-bottom: 15px;
+        }
+
+        @keyframes spin { 100% { transform:rotate(360deg); } }
+
+        /* Contenedor General */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            background: rgba(255, 255, 255, 0.93); /* Un toque translúcido para que luzca tu fondo editado detras */
+            padding: 30px;
+            margin-bottom: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid var(--dorado);
+            backdrop-filter: blur(4px); /* Suaviza el fondo que verás pasar por detrás */
+        }
+
+        h2 {
+            color: var(--oscuro);
+            margin-bottom: 20px;
+            border-bottom: 2px solid var(--amarillo-principal);
+            padding-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        /* CASILLA DE VIDEO RESPONSIVA */
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* Relación de aspecto 16:9 estándar */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            margin-top: 15px;
+            background: #000;
+        }
+
+        .video-container iframe, .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        /* Galería de Fotos */
+        .galeria {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .foto-card {
+            background: var(--amarillo-suave);
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .foto-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .foto-card p {
+            margin-top: 10px;
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+
+        /* Poemas y Razones */
+        .poema-box {
+            font-style: italic;
+            background: #fffdf0;
+            padding: 20px;
+            border-radius: 8px;
+            border-image: linear-gradient(to bottom, var(--dorado), transparent) 1 100%;
+            margin-bottom: 20px;
+            white-space: pre-line;
+            text-align: center;
+        }
+
+        ul.lista-amor {
+            list-style: none;
+        }
+
+        ul.lista-amor li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        ul.lista-amor li::before {
+            content: "🌻";
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        /* Botones e Interactividad */
+        .grid-botones {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .btn-lugar {
+            display: block;
+            background: var(--amarillo-principal);
+            color: var(--oscuro);
+            text-decoration: none;
+            padding: 15px;
+            text-align: center;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .btn-lugar:hover {
+            background: var(--dorado);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            color: #777;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.8);
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Bienvenida -->
+    <header>
+        <div class="Girasol-icono">🌻</div>
+        <h1>Para Lili, mi flor amarilla favorita</h1>
+        <p>NUESTRO RINCONCITO EN LA WEB</p>
+    </header>
+
+    <div class="container">
+
+        <!-- NUEVA SECCIÓN: CASILLA DE VIDEO -->
+        <section>
+            <h2>🎥 Un Mensaje Especial Para Ti</h2>
+            <p>Dale play al video:</p>
+            <div class="video-container">
+                
+                
+                <!-- OPCIÓN 2: Si prefieres tener el archivo de video local en la misma carpeta, 
+                     borra la línea del <iframe> de arriba y activa este bloque quitando las marcas de comentario: -->
+                <video controls>
+                    <source src="vid.mp4" type="video/mp4">
+                    Tu navegador no soporta la reproducción de video.
+                </video> 
+                1
+               
+            </div>
+        </section>
+
+        <!-- Sección: Por qué eres la mejor  -->
+        <section>
+            <h2>🌻 ¿Por qué eres la mejor novia del mundo?</h2>
+            <p style="margin-bottom: 15px;">Hice este espacio para recordarte lo especial que eres para mí y lo mucho que agradezco tenerte a mi lado. Eres mi sol de cada día por razones como estas:</p>
+            <ul class="lista-amor">
+                <li><strong>Tu sonrisa:</strong> Capaz de iluminar el día más gris.</li>
+                <li><strong>Tu apoyo incondicional:</strong> Siempre estás ahí cuando más lo necesito.</li>
+                <li><strong>Tu forma de ser:</strong> Única, tierna y divertida. ¡Nadie se compara a ti!</li>
+                <li><strong>no olvides que: </strong>eres mi bella serendipia </li>
+            </ul>
+        </section>
+
+        <!-- Sección: Nuestras Fotos Juntos -->
+        <section>
+            <h2>📸 Nuestros Momentos Favoritos</h2>
+            <div class="galeria">
+                <div class="foto-card">
+                    <img src="manitos.jpeg" alt="Nosotros">
+                    <p>nunca olvidare como nos veiamos</p>
+                </div>
+                <div class="foto-card">
+                    <img src="sonrisa.jpeg" alt="Nosotros">
+                    <p>cuando supe que una sonrisa tuya me hacia muy feliz</p>
+                </div>
+                <div class="foto-card">
+                    <img src="dormida.jpeg" alt="Lili">
+                    <p>entendi que ahi era</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección: Poemas -->
+        <section>
+            <h2>✍️ Mis Poemas Para Ti</h2>
+            
+            <div class="poema-box">
+                <h3>ANHELO</h3>
+                <p>
+                    ¿Por qué ver por separadas esta vida y la siguiente, si una proviene de la anterior?
+
+El tiempo siempre es escaso para quienes necesitan, pero para los que aman dura para siempre.
+
+Aun después de la noche más oscura, el Sol saldrá de nuevo. 
+
+Si el corazón es lo bastante fuerte, el alma renacerá con cada nuevo día. 
+Vida tras vida, época tras época, para siempre.
+
+Existen almas gemelas destinadas a encontrarse, pero no todas están destinadas a permanecer juntas.
+¿Por qué ver por separadas esta vida y la siguiente, si una proviene de la anterior? …habla del anhelo, de un alma que clama por otra
+                </p>
+            </div>
+
+            <div class="poema-box">
+                <h3>[ (∂ + m) ψ = 0 ]</h3>
+                <p>
+                    Esta es la ecuación de Dirac, y es la más bonita de toda la física. Describe el fenómeno del entrelazamiento cuántico, que afirma que "si dos sistemas interaccionan entre ellos durante cierto periodo de tiempo y luego se separan, podemos describirlos como dos sistemas distintos, pero de una forma sutil se vuelven un sistema único. Lo que le ocurre a uno sigue afectando al otro, incluso a distancia de kilómetros o años luz".
+
+Esto es el entrelazamiento cuántico o conexión cuántica. Dos partículas que, en algún momento estuvieron unidas, siguen estando de algún modo relacionadas. No importa la distancia entre ambas, aunque se hallen en extremos opuestos del Universo. La conexión entre ellas es instantánea.
+
+Es lo mismo que ocurre entre dos personas cuando les une un vínculo que solo los seres vivos pueden experimentar. Es el modo en que funciona esta relación a la que llamamos AMOR.
+                </p>
+            </div>
+        </section>
+
+        <!-- Sección: Cosas en común -->
+        <section>
+            <h2>💛 Lo que nos une</h2>
+            <p>Me encanta todo lo que compartimos, desde los detalles más pequeños hasta nuestros grandes sueños:</p>
+            <ul class="lista-amor">
+                <li>Nuestras charlas sinceras.</li>
+                <li>comer juntos</li>
+                <li>nuestras metas</li>
+                <li>perdernos en el otro cuando nos vemos</li>
+                <li>Y por supuesto... ¡tu amor por las flores amarillas! 🌼</li>
+            </ul>
+        </section>
+
+        <!-- Sección: Lugares por visitar (Citas futuras) -->
+        <section>
+            <h2>✈️ Próximas Aventuras Juntos</h2>
+            <p>Lugares que muero por ir de tu mano:</p>
+            <div class="grid-botones">
+                <a href="https://maps.app.goo.gl/TK7uydRxNefG7qCy9?g_st=ac" target="_blank" class="btn-lugar">📍 feria en la paz</a>
+                <a href="https://maps.app.goo.gl/KhW23k6SvYJ1tcZH7?g_st=ac" target="_blank" class="btn-lugar">📍 unos cangrejitos</a>
+                <a href="https://maps.app.goo.gl/RsyJXsiNqnzcpfNR7?g_st=ac" target="_blank" class="btn-lugar">📍 unos vinos en tarija</a>
+                <a href="https://maps.app.goo.gl/UP4opgrjHuxeLamJ7?g_st=ac" target="_blank" class="btn-lugar">📍 ver huellas de dinosaurios juntos</a>
+            </div>
+        </section>
+
+        <!-- Sección: Lugares para ir a comer -->
+        <section>
+            <h2>🍕 Próximas Citas para Comer</h2>
+            <p>Nuestra lista de pendientes gastronómicos:</p>
+            <div class="grid-botones">
+                <a href="https://maps.app.goo.gl/3UA8PASdoaugkRkN7?g_st=ac" target="_blank" class="btn-lugar">  UN RICO RAMEN </a>
+                <a href="https://maps.app.goo.gl/7c4SVD9KfnSvJTtf6?g_st=ac" target="_blank" class="btn-lugar"> visitar VIEW</a>
+                <a href="https://maps.app.goo.gl/RpNUbtjBSFayFeju6?g_st=ac" target="_blank" class="btn-lugar">☕ CAPRESSO JUNTOS ]</a>
+                <a href="https://maps.app.goo.gl/iCMmPLvKnWdmiusK7?g_st=ac" target="_blank" class="btn-lugar"> 🍔LLEVAME A BURGUER KING TE LO RUEGO</a>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>Hecho con todo el amor del mundo por y para Lili 💛 2026</p>
+    </footer>
+
+</body>
+</html>
